@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="cubalider_mobile.entity.mobile.class">Cubalider\Component\Mobile\Entity\Mobile</parameter>
+    </parameters>
+
+    <services>
+        <service id="cubalider_mobile.mobile_manager" class="Cubalider\Component\Mobile\Entity\MobileManager">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument>%cubalider_mobile.mobile_manager%</argument>
+        </service>
+    </services>
+</container>
